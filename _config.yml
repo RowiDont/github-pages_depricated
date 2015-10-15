@@ -7,7 +7,7 @@ relative_permalinks: true
 # Setup
 title:               dev.Patel
 tagline:             Hi, I'm Rafi Patel - a developer in training
-url:                 “http://localhost:4000”
+url:                 “http://RowiDont.github.io”
 paginate:            1
 baseurl:             ""
 
@@ -34,6 +34,6 @@ author:
   email:             rafiepatel@gmail.com
 
 # Custom vars
-version:             0.2.0
+version:             0.5.0
 github:
   repo:              https://github.com/RowiDont/poole
