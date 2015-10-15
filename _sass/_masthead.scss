@@ -117,12 +117,13 @@
   li:hover {
     background-color: #f2f2f2;
     color: #4ed5ae !important;
+    transition-duration: 400ms;
   }
   a:hover {
     color: #4ed5ae;
     text-decoration: none;
+    transition-duration: 400ms;
   }
-
 }
 
 .mobile {
