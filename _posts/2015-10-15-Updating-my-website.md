@@ -33,7 +33,7 @@ Every time I struggle with a concept or idea, and finally reach an answer, why n
 If you checkout this site on your phone, you'll notice that I opted for an unconventional menu. No hamburgers here. And that's because I have never liked he hamburger. So you can imagine my delight when I found [this](https://lmjabreu.com/post/why-and-how-to-avoid-hamburger-menus/) excellent write-up by Louie A on the numerous issues with the hamburger.
 
 {: .center}
-![mobile-menu](/images/mobile-menu.png)
+![mobile-menu](/images/mobile-menu.PNG)
 
 {: .center .caption}
 Mobile menu
