@@ -1,26 +1,137 @@
 // Masthead
 //
 // Super small header above the content for site name and short description.
+@import url(https://fonts.googleapis.com/css?family=PT+Mono);
+@import url(https://fonts.googleapis.com/css?family=Hammersmith+One);
+
+@media screen and (max-width: 460px) {
+  .masthead-title {
+    a {font-size: 110% !important;}
+    small {font-size: 60% !important; width: 90% !important; margin-left: auto; margin-right: auto;}
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .menu {
+    // ul {display: block !important;}
+    // li {display: block !important; width: 100% !important;}
+    i {display: block;}
+    a {padding: 0 !important;}
+  }
+
+  .move-down {
+    background: #f6f6f6;
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 50px;
+    border-top: 2px;
+  }
+}
+
+@media screen and (min-width: 486px) {
+  .masthead {padding-top: 2.5rem !important;}
+
+  .mobile {display: none;}
+}
 
 .masthead {
-  padding-top:    1rem;
+  padding-top: 1.5rem;
   padding-bottom: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0.7rem;
 }
 
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
   color: #505050;
+  text-align: center;
 
   a {
-    color: #505050;
+    color: #eb5353;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    font-family: 'PT Mono';
+    font-size: 150%;
   }
 
   small {
-    font-size: 75%;
-    font-weight: 400;
+    font-size: 50%;
+    font-weight: 300;
     color: #c0c0c0;
     letter-spacing: 0;
+    width: 100%;
+    display: block;
   }
+}
+
+// .menudiv {
+//   display: none;
+//   text-align: center;
+//   font-family: 'Hammersmith One', sans-serif;
+//   font-size: 2rem;
+// }
+
+.menu {
+  padding-bottom: 1rem;
+
+  nav {
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    display: inline-flex;
+    width: 100%;
+  }
+
+  li {
+    display: inline-block;
+    width: 25%;
+    // // text-transform: uppercase;
+    // text-align: center;
+    // font-size: 70%;
+    // padding: 0.3rem;
+    // cursor: pointer;
+    // font-family: 'Hammersmith One', sans-serif;
+  }
+
+
+  a {
+    // display: inline-block;
+    // text-transform: uppercase;
+    width: 25%;
+    text-align: center;
+    font-size: 81%;
+    padding: 0.3rem;
+    cursor: pointer;
+    font-family: 'Hammersmith One', sans-serif;
+    color: #37739e;
+    text-decoration: none;
+  }
+
+  li:hover {
+    background-color: #f2f2f2;
+    color: #4ed5ae !important;
+  }
+  a:hover {
+    color: #4ed5ae;
+    text-decoration: none;
+  }
+
+}
+
+.mobile {
+  font-size: 1.3rem !important;
+  font-weight: bolder;
+  margin-bottom: -10px;
+  padding-top: 5px;
+}
+
+.footer {
+  height: 10px;
 }

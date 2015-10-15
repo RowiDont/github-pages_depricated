@@ -5,11 +5,12 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               The Real Dev Patel
-tagline:             Becoming the best developer I can become
+title:               dev.Patel
+tagline:             Hi, I'm Rafi Patel - a developer in training
 url:                 “http://localhost:4000”
 paginate:            1
 baseurl:             ""
+
 
 # Assets
 #
@@ -18,6 +19,14 @@ sass:
   sass_dir:          _sass
   style:            :compressed
 
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: pygments
+
+highlighter: pygments
+
 # About/contact
 author:
   name:              Rafi Patel
@@ -25,6 +34,6 @@ author:
   email:             rafiepatel@gmail.com
 
 # Custom vars
-version:             0.1.0
+version:             0.2.0
 github:
   repo:              https://github.com/RowiDont/poole
