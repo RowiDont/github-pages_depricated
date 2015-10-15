@@ -7,7 +7,7 @@ relative_permalinks: true
 # Setup
 title:               dev.Patel
 tagline:             Hi, I'm Rafi Patel - a developer in training
-url:                 “http://RowiDont.github.io”
+url:                 http://RowiDont.github.io
 paginate:            1
 baseurl:             ""
 
