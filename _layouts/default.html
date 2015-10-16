@@ -36,7 +36,9 @@
         {{ content }}
         <hr>
         {% if page.date == "" or page.date == nil %}
-          {% include pagination.html %}
+          {% if page.url != "/about/"}
+            {% include pagination.html %}
+          {% endif %}
         {% endif %}
       </main>
 
