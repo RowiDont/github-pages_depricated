@@ -2,9 +2,7 @@
 layout: post
 title: Updating my website
 published: true
-tags:
-    - Jekyll
-    - Community
+tags: ['Jekyll', 'HTML/CSS']
 ---
 
 As you may notice (the one person who has seen this blog in the past month), my site design has changed. I was pretty peeved that I was becoming a web developer yet somehow I didn't have my own website, rather relying on Hyde, a Jekyll theme made by [@mdo](https://twitter.com/mdo).

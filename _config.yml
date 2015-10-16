@@ -5,13 +5,13 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               dev.Patel
+title:               r.Patel
 tagline:             Hi, I'm Rafi Patel - a developer in training
 # url:                 http://localhost:4000
 url:                 http://RowiDont.github.io
 paginate:            1
 baseurl:             ""
-
+paginate_limit:      5
 
 # Assets
 #
