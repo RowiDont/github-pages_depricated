@@ -36,7 +36,7 @@
         {{ content }}
         <hr>
         {{ page.url }}
-        {% if page.date == "" or page.date == nil % and page.url != "/about/"}
+        {% if page.date == "" or page.date == nil %}
           {% include pagination.html %}
         {% endif %}
       </main>
