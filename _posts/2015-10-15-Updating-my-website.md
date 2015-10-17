@@ -28,7 +28,7 @@ Every time I struggle with a concept or idea, and finally reach an answer, why n
 
 ### Mobile design principles
 
-If you checkout this site on your phone, you'll notice that I opted for an unconventional menu. No hamburgers here. And that's because I have never liked he hamburger. So you can imagine my delight when I found [this](https://lmjabreu.com/post/why-and-how-to-avoid-hamburger-menus/) excellent write-up by Louie A on the numerous issues with the hamburger.
+If you checkout this site on your phone, you'll notice that I opted for an unconventional menu. No hamburgers here. And that's because I have never liked the hamburger. So you can imagine my delight when I found [this excellent write-up by Louie A](https://lmjabreu.com/post/why-and-how-to-avoid-hamburger-menus/) on the numerous issues with the hamburger.
 
 {: .center}
 ![mobile-menu](/images/mobile-menu.PNG)
@@ -55,7 +55,7 @@ The making of this menu was a lot simpler than I thought it would be. Here's the
 
 ### First profesh Ruby code
 
-In completely unrelated news, I wrote my first "real" line of ruby code today, while completing the [Binary Converter](http://coderbyte.com/CodingArea/Editor.php?ct=Binary%20Converter&lan=Ruby) challenge on Coderbyte. Wouldn't be possible without the excellent explanations by Ryan Glassett of App Academy, who showed some new Ruby methods during my coding assessment. I also finally learned how binary works after reading [this](http://www.kerryr.net/pioneers/binary.htm) excellent write-up by Kerry Redshaw. Check out my solution:
+In completely unrelated news, I wrote my first "real" line of ruby code today, while completing the [Binary Converter](http://coderbyte.com/CodingArea/Editor.php?ct=Binary%20Converter&lan=Ruby) challenge on Coderbyte. Wouldn't be possible without the excellent explanations by Ryan Glassett of App Academy, who showed me some new Ruby methods during my coding assessment. I also finally learned how binary works after reading [this great guide by Kerry Redshaw](http://www.kerryr.net/pioneers/binary.htm). Check out my solution:
 
 {% highlight Ruby %}
 def binary_convcert(str)

@@ -38,3 +38,9 @@ author:
 version:             0.5.0
 github:
   repo:              https://github.com/RowiDont/poole
+
+
+analytics :
+  provider : google
+  google :
+      tracking_id : 'UA-66445737-1'
