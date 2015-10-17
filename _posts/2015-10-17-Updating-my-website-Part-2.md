@@ -36,12 +36,56 @@ My first idea was to look at sites where it was working. I headed over to [http:
 
 Great, so I knew the basic issue. It seemed like even though the element was active, the HTML wasn't being updated to reflect that.
 
-We'll need to dive a bit deeper into the pagination code to see where the problem was occuring. Check it out below:
+We'll need to dive a bit deeper into the pagination code to see where the problem was occurring. Check it out the relevant excerpts below:
 
-{% highlight %}
-{% assign limit = 5 %}
-{% if site.paginate_limit %}
-    {% assign limit = site.paginate_limit %}
-{% endif %}
-{% assign totalpages = paginator.total_pages %}
+{% highlight ruby %}
+\{\% assign limit = 7 \%\}
+\{\% if site.paginate_limit \%\}
+    \{\% assign limit = site.paginate_limit \%\}
+\{\% endif \%\}
+
+\{\% assign totalpages = paginator.total_pages \%\}
+
+\{\% if totalpages > limit \%\}
+    \{\% for count in (2..paginator.total_pages) \%\}
+        \{\% if count == dots_prev  \%\}
+            \{\% assign indicator_first = ' pages-indicator--active' \%\}
+        \{\% endif \%\}
+        \{\% if count == dots_next and paginator.page < max_next \%\}
+            \{\% assign indicator_last = ' pages-indicator--active' \%\}
+        \{\% endif \%\}
+        \{\% if forloop.first \%\}
+            \{\% assign relative_first = paginator.page | minus: forloop.index | divided_by: 1 \%\}
+        \{\% endif \%\}
+        \{\% if forloop.last \%\}
+            \{\% assign relative_last = paginator.page | minus: forloop.index | replace: '-', '' | divided_by: 1 | plus: 1 \%\}
+        \{\% endif \%\}
+    \{\% endfor \%\}
+\{\% endif \%\}
+
+<li class="pages-indicator \{\{ indicator_first \}\} pages-indicator--offset-\{\{ relative_first \}\}"><span aria-hidden="true">...</span><span class="sr-only">Skipped pages indicator</span></li>
 {% endhighlight %}
+
+I was initially really frightened looking at this code. I don't even know for certain what language this is in (mostly certain it is ruby), but I knew With enough patience I could solve my issue. I first went through and found the instances of <code>pages-indicator--active</code>. Based on the code it seemed like if a certain condition was met, the class was added to the ellipsis element called <code>pages-indicator</code>, thus making it visible.
+
+So why wasn't this happening? My first guess was that the variable <code>paginator.total_pages</code> was never initiated in the code, and thus breaking the whole <code>for</code> loop. I quickly realized that it wasn't a local variable though. <code>paginator.total_pages</code> was created by jekyll, and it did in fact exist. So what was that number? Well, obviously it was the total number of pages I had: 6.
+
+If you look at the <code>if</code> statement that initiates the for loop, you'll see the issue immediately. <code>if totalpages > limit</code> will return ```false``` when the limit is 7, and the number of total pages is 6. It turns out this code wasn't even running at all! So I changed the code to assign `limit` a value of 5. And just like that, the day was saved.
+
+### Writing my own jekyll code
+
+My problems weren't over yet. The pagination was showing up on pages where it really shouldn't have. Like my _About_ page, or individual blog post pages. I knew how I wanted to solve this, but wasn't sure how to implement it. I wanted to see what jekyll variables differed between the regular blog pages, and the individual blog pages. With that information, I'd make an `if` statement to only display the pagination content when you were on the blog.
+
+Consulting this [jekyll cheatsheet](http://ricostacruz.com/cheatsheets/jekyll.html) I included `page.url` and `page.date` in my default.html file. When the pages reloaded, I saw that pages like http://localhost:4000/page2 did not have a date, while individual post pages like http://localhost:4000/2015/10/17/Updating-my-website-Part-2/ did. So I decided to try my hand at writing code in a language I didn't even know based on what I had learned from the previous issue. I came up with this:
+
+{% highlight ruby %}
+\{\% if page.date == "" or page.date == nil \%\}
+  \{\% if page.url != "/about/" \%\}
+    \{\% include pagination.html \%\}
+  \{\% endif \%\}
+\{\% endif \%\}
+{% endhighlight %}
+
+It's fairly simple. If the jekyll variable `page.date` is empty, and if `page.url` does not link to the About page, display the pagination.html file from /_includes.
+
+And that's the story of how this site came to exist. Cheers!

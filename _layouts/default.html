@@ -25,7 +25,6 @@
       <main>
         {{ content }}
         <hr>
-        {{ page.url }}
         {% if page.date == "" or page.date == nil %}
           {% if page.url != "/about/" %}
             {% include pagination.html %}
